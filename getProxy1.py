@@ -25,13 +25,13 @@ def Spider(pagestart,pagenum):
                 result = ip + "," + port + "," + protocol + "," + safe + ","+ pagenum + "\n"
                 print(result)
                 if 'HTTPS' in protocol and '高' in safe: 
-                    with open('/var/pyproject/https-anonymous.csv','a') as fp:
+                    with open('https-anonymous.csv','a') as fp:
                         fp.write(result)
                 elif 'HTTPS' in protocol and '高' not in safe:
-                    with open('/var/pyproject/https-unanonymous.csv','a') as fp:
+                    with open('https-unanonymous.csv','a') as fp:
                         fp.write(result)
                 else :
-                    with open('/var/pyproject/other-proxies.csv','a') as fp:
+                    with open('other-proxies.csv','a') as fp:
                         fp.write(result)
             else :
                 result = status_code , str(pagenum)
