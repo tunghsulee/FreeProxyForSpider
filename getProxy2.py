@@ -1,3 +1,6 @@
+import requests
+from lxml import etree
+
 def Spider2():
     for i in range(1,101): #最大支持100页
         print('第%d页爬取完成' %i)
