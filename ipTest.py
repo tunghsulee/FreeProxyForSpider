@@ -1,6 +1,6 @@
 from multiprocessing.dummy import Pool
 
-f =  open('/var/pyproject/https-anonymous.csv','r')
+f =  open('https-anonymous.csv','r')  #测试哪个文件夹就写哪个
 ips = []
 for line in f:
     listip = list(line.split(","))
@@ -17,13 +17,13 @@ def testip(ip):
         result = ip + '\n'
         print(r.status_code)
         print('第',ips.index(ip),'个：yes:\t'+result + '------------------------------------------------------------')
-        with open('canuse.csv','a') as fp:
+        with open('canuse.csv','a') as fp:   #可用ip
             fp.write(result)
         
     except Exception as e:
         result = ip + '\n'
         print('第',ips.index(ip),'个：no:\t'+result + '-------------------------------------------------------------')
-        with open ('reason.csv','a') as fp:
+        with open ('reason.csv','a') as fp:   #报错信息
             fp.write(str(e)+'\n')
 
 p = Pool(1024)  #自行选择
