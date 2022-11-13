@@ -28,6 +28,6 @@ def Spider2():
             result = [ip , port , type , anonymity , country ]
             result = ",".join(result) + '\n'
             # print(result)
-            with open ('/var/pyproject/https-anonymous.csv','a') as fp:
+            with open ('https-elite.csv','a') as fp:
                 fp.write(result)
         i = i+1
